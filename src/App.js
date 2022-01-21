@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import About from './components/About';
+import Info from './components/Info';
 
 function App() {
   return (
@@ -16,8 +17,10 @@ function App() {
         <h1>Routing Example</h1>
         <p>
           <Link to="/">Home</Link>
-          |
+          {" | "}
           <Link to="/about">About</Link>
+          {" | "}
+          <Link to="/1">Info</Link>
         </p>
         <Switch>
           <Route exact path="/" >
@@ -25,6 +28,15 @@ function App() {
           </Route>
           <Route exact path="/about" >
             <About />
+          </Route>
+          <Route exact path="/:id">
+            <Info />
+          </Route>
+          <Route exact path="/:id/:textColor">
+            <Info />
+          </Route>
+          <Route exact path="/:id/:textColor/:bgColor">
+            <Info />
           </Route>
         </Switch>
 
